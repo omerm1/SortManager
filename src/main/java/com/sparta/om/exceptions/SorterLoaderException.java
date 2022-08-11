@@ -1,7 +1,12 @@
 package com.sparta.om.exceptions;
 
 public class SorterLoaderException extends Exception {
-    public SorterLoaderException(String s) {
-
+    private final String message;
+    public SorterLoaderException(String message) {
+        this.message = message;
+    }
+    @Override
+    public String getMessage() {
+        return message;
     }
 }
