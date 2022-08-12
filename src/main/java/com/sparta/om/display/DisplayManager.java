@@ -30,7 +30,7 @@ public class DisplayManager {
     }
 
     public static void displayMultipleChoices() {
-        System.out.print("Enter the numbers corresponding with the sorting algorithms you would like to compare: \n" +
+        System.out.print("Enter the numbers corresponding with the sorting algorithms you would like to compare (without spaces): \n" +
                 "1 - Bubble Sort \n" +
                 "2 - Merge Sort \n" +
                 "3 - Binary Sort \n" +

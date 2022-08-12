@@ -70,7 +70,7 @@ public class SortLoader {
         logger.log(Level.INFO, "Creating array of algo choices to compare");
         int[] sortingAlgoCompareChoicesArray = convertIntToArrayOfInts(sortingAlgoCompareChoices);
 
-        System.out.println("What length would you like the array to be?");
+        System.out.print("What length would you like the array to be? ");
         int arrayLength = scan.nextInt();
 
         logger.log(Level.INFO, "creating array of sorters based on algo choices to compare");
