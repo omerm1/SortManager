@@ -36,4 +36,9 @@ public class BubbleSorter implements Sorter{
         logger.log(Level.INFO, "Loops done - about to return statement");
         return arrayToSort;
     }
+
+    @Override
+    public String toString() {
+        return "Bubble Sorter";
+    }
 }

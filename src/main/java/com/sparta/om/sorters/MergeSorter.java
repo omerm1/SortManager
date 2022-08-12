@@ -55,4 +55,9 @@ public class MergeSorter implements Sorter{
         }
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Merge Sorter";
+    }
 }

@@ -16,7 +16,21 @@ import java.util.logging.SimpleFormatter;
 
 public class SortLoader {
     private static final Logger logger = Logger.getLogger("sortLoader logger");
+    private final static Scanner scan = new Scanner(System.in);
+
     public void start() {
+        DisplayManager.printMenu();
+        int menuChoice = scan.nextInt();
+        if (menuChoice == 1) {
+            singleChoice();
+        } else if (menuChoice == 2) {
+            multipleChoice();
+        } else {
+            System.out.println("Invalid menu choice");
+            start();
+        }
+    }
+    public void singleChoice() {
         try {
             try {
                 FileHandler fileHandler = new FileHandler("src/main/resources/sortLoader.log", false);
@@ -28,22 +42,19 @@ public class SortLoader {
 
             logger.setUseParentHandlers(false);
 
-
-            Scanner scan = new Scanner(System.in);
-
             logger.log(Level.INFO, "Displaying sorting algo choices");
             DisplayManager.displayChoices();
             int sortingAlgoChoice = scan.nextInt();
 
             System.out.print("What length would you like the array to be? ");
-            int length = scan.nextInt();
+            int arrayLength = scan.nextInt();
 
             logger.log(Level.INFO, "Sending random array to sorter");
             Sorter sorter = SortFactory.getSorter(sortingAlgoChoice);
 
             logger.log(Level.INFO, "Generating random array");
-            int[] randomArray = generateRandomArray(length);
-            DisplayManager.printBeforeSorting(randomArray);
+            int[] randomArray = generateRandomArray(arrayLength);
+            DisplayManager.printBeforeSorting(sorter, randomArray);
 
             logger.log(Level.INFO, "Printing results");
             DisplayManager.printResults(sorter, randomArray);
@@ -53,6 +64,27 @@ public class SortLoader {
         }
     }
 
+    public void multipleChoice() {
+        DisplayManager.displayMultipleChoices();
+        int sortingAlgoCompareChoices = scan.nextInt();
+        int[] sortingAlgoCompareChoicesArray = convertIntToArrayOfInts(sortingAlgoCompareChoices);
+        System.out.println("What length would you like the array to be?");
+        int arrayLength = scan.nextInt();
+
+        Sorter[] sorters = new Sorter[sortingAlgoCompareChoicesArray.length];
+        for (int i = 0; i < sortingAlgoCompareChoicesArray.length; i++) {
+            try {
+                sorters[i] = SortFactory.getSorter(sortingAlgoCompareChoicesArray[i]);
+            } catch (SorterLoaderException e) {
+                System.out.println(e.getMessage());;
+            }
+        }
+        int[] randomArray = generateRandomArray(arrayLength);
+        DisplayManager.printBeforeComparing(sorters, randomArray);
+
+        DisplayManager.printCompareResults(sorters, randomArray);
+    }
+
     private int[] generateRandomArray(int length) {
         int[] randomArray = new int[length];
         Random random = new Random(1000);
@@ -60,5 +92,10 @@ public class SortLoader {
             randomArray[i] = random.nextInt(1000);
         }
         return randomArray;
+    }
+
+    private int[] convertIntToArrayOfInts(int num) {
+        int[] numArray = Integer.toString(num).chars().map(c -> c-'0').toArray();
+        return numArray;
     }
 }

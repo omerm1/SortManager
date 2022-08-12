@@ -34,4 +34,9 @@ public class BinarySorter implements Sorter{
         logger.log(Level.INFO, "Returning sorted Binary tree");
         return binarySort.getSortedTreeAsc();
     }
+
+    @Override
+    public String toString() {
+        return "BinarySorter";
+    }
 }
