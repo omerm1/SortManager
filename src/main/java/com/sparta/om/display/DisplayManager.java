@@ -27,7 +27,7 @@ public class DisplayManager {
                 "1 - Bubble Sort \n" +
                 "2 - Merge Sort \n" +
                 "3 - Binary Sort \n" +
-                "Enter the number here:");
+                "Enter the number here: ");
     }
 
 }
