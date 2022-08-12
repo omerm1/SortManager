@@ -8,26 +8,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MergeSorter implements Sorter{
-    private static final Logger logger = Logger.getLogger("binary logger");
     @Override
     public int[] sortArray(int[] arrayToSort) {
-        try {
-            FileHandler fileHandler = new FileHandler("src/main/resources/mergeSort.log", false);
-            fileHandler.setLevel(Level.ALL);
-            fileHandler.setFormatter(new CustomLoggingFormatter());
-            logger.addHandler(fileHandler);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        logger.setUseParentHandlers(false);
-
         if(arrayToSort.length <= 1) {
-            logger.log(Level.FINE, "Array too short to sort, returning as is");
             return arrayToSort;
         }
 
         int midpoint = arrayToSort.length / 2;
-        logger.log(Level.INFO, "Splitting array into 2 arrays");
         int[] left = new int[midpoint];
         int[] right;
         if (arrayToSort.length % 2 == 0) {
@@ -45,7 +32,6 @@ public class MergeSorter implements Sorter{
         left = sortArray(left);
         right = sortArray(right);
         int[] result;
-        logger.log(Level.INFO, "Rejoining two arrays into one array");
         result = merge(left, right);
         return result;
     }
