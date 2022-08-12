@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f76df61f-b3d8-425d-9c38-9705c32da3cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/exceptions/ChildNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinarySorter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinaryTree/BinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinaryTree/BinaryTreeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinaryTree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/sparta/om/sorterTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/display/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/display/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/CustomLoggingFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/CustomLoggingFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/exceptions/SorterLoaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/exceptions/SorterLoaderException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinarySorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinarySorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BubbleSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BubbleSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/Sorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/Sorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/SortFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/SortFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/SortLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/start/SortLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/om/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sparta/om/AppTest.java" afterDir="false" />
     </list>
