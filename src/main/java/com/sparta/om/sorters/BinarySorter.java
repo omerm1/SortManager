@@ -24,11 +24,14 @@ public class BinarySorter implements Sorter{
         logger.setUseParentHandlers(false);
 
         BinaryTreeImpl binarySort = new BinaryTreeImpl(arrayToSort[0]);
-        logger.log(Level.INFO, "Created Binary Tree with first element in list");
+        logger.log(Level.FINE, "Created Binary Tree with first element in list");
+
         for (int i = 1; i < arrayToSort.length; i++) {
             binarySort.addElement(arrayToSort[i]);
         }
-        logger.log(Level.INFO, "Completed Binary Tree with rest of elements in list");
+        logger.log(Level.FINE, "Completed Binary Tree with rest of elements in list");
+
+        logger.log(Level.INFO, "Returning sorted Binary tree");
         return binarySort.getSortedTreeAsc();
     }
 }

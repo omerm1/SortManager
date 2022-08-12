@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f76df61f-b3d8-425d-9c38-9705c32da3cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/MergeSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/MergeSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinarySorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/om/sorters/BinarySorter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
