@@ -19,6 +19,16 @@ public class SortLoader {
     private final static Scanner scan = new Scanner(System.in);
 
     public void start() {
+        try {
+            FileHandler fileHandler = new FileHandler("src/main/resources/sortLoader.log", false);
+            fileHandler.setFormatter(new CustomLoggingFormatter());
+            logger.addHandler(fileHandler);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        logger.setUseParentHandlers(false);
+
         DisplayManager.printMenu();
         int menuChoice = scan.nextInt();
         if (menuChoice == 1) {
@@ -32,16 +42,6 @@ public class SortLoader {
     }
     public void singleChoice() {
         try {
-            try {
-                FileHandler fileHandler = new FileHandler("src/main/resources/sortLoader.log", false);
-                fileHandler.setFormatter(new CustomLoggingFormatter());
-                logger.addHandler(fileHandler);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            logger.setUseParentHandlers(false);
-
             logger.log(Level.INFO, "Displaying sorting algo choices");
             DisplayManager.displayChoices();
             int sortingAlgoChoice = scan.nextInt();
@@ -67,10 +67,13 @@ public class SortLoader {
     public void multipleChoice() {
         DisplayManager.displayMultipleChoices();
         int sortingAlgoCompareChoices = scan.nextInt();
+        logger.log(Level.INFO, "Creating array of algo choices to compare");
         int[] sortingAlgoCompareChoicesArray = convertIntToArrayOfInts(sortingAlgoCompareChoices);
+
         System.out.println("What length would you like the array to be?");
         int arrayLength = scan.nextInt();
 
+        logger.log(Level.INFO, "creating array of sorters based on algo choices to compare");
         Sorter[] sorters = new Sorter[sortingAlgoCompareChoicesArray.length];
         for (int i = 0; i < sortingAlgoCompareChoicesArray.length; i++) {
             try {
@@ -79,9 +82,12 @@ public class SortLoader {
                 System.out.println(e.getMessage());;
             }
         }
+
+        logger.log(Level.INFO, "Generating random array and sending to display manager");
         int[] randomArray = generateRandomArray(arrayLength);
         DisplayManager.printBeforeComparing(sorters, randomArray);
 
+        logger.log(Level.INFO, "Printing compare results");
         DisplayManager.printCompareResults(sorters, randomArray);
     }
 
